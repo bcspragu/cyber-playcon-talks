@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.remark-container {
+  @apply bg-slate-950;
+}
+
+.remark-slide-scaler {
+  @apply shadow-none;
+}
+
+.remark-slide-content.intro {
+  @apply prose prose-p:my-2 prose-p:text-xl prose-h1:mb-4;
+}
+
+.remark-slide-content {
+  @apply prose prose-p:text-xl prose-li:text-xl prose-img:my-1;
+}

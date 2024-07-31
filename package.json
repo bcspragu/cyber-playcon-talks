@@ -1,0 +1,14 @@
+{
+  "name": "cyber-playcon-talks",
+  "version": "1.0.0",
+  "description": "This repo contains the slides and associated infra for my talks.",
+  "scripts": {
+    "tailwind": "tailwindcss -i ./main.css -o ./out.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.13",
+    "tailwindcss": "^3.4.7"
+  }
+}
