@@ -8,21 +8,28 @@
   <body>
     <script src="/remark.js"></script>
     <script>
-      var slideshow = remark.create({
+    function ready(fn) {
+      if (document.readyState !== 'loading') {
+        fn();
+      } else {
+        document.addEventListener('DOMContentLoaded', fn);
+      }
+    }
+
+    function initSlides() {
+      remark.create({
         sourceUrl: '/slides.md',
         includePresenterNotes: true,
       });
+    }
+
+    ready(() => {
+      initSlides()
 
       const socket = new WebSocket("/live");
 
-      // Connection opened
-      // socket.addEventListener("open", (event) => {
-      //   console.log('listening for updates')
-      // });
-
       // Listen for messages
       socket.addEventListener("message", (event) => {
-        // console.log('received update, reloading', event)
         const data = JSON.parse(event.data)
 
         if (data.filename === 'out.css') {
@@ -36,16 +43,10 @@
         } else if (data.filename === 'index.html') {
           location.reload()
         } else {
-          const oldSlides = Array.from(document.getElementsByClassName("remark-slides-area"))
-          var slideshow = remark.create({
-            sourceUrl: '/slides.md',
-            includePresenterNotes: true,
-          });
-          for (slides of oldSlides) {
-            slides.remove()
-          }
+          initSlides()
         }
       });
+    })
     </script>
   </body>
 </html>

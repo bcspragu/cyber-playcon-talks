@@ -44,6 +44,18 @@ class: center, middle
 
 ---
 
+class: center, middle
+
+# Too complicated to usefully describe.
+
+---
+
+class: center, middle
+
+# But we can get a rough idea.
+
+---
+
 # Facebook
 
 <div class="grid grid-cols-2 gap-x-4 -mx-8">
@@ -56,14 +68,6 @@ class: center, middle
   <a class="text-center block" href="https://eprint.iacr.org/2018/413.pdf">Source</a>
 </div>
 </div>
-
-<p class="text-sm text-center mt-8 w-3/5 mx-auto">
-Note: Facebook is one of the world's largest services and their full system architecture is likely too large to fit in any one person's head.
-</p>
-
-<p class="text-sm text-center mt-8 w-3/5 mx-auto">
-This is just for demonstration.
-</p>
 
 ---
 

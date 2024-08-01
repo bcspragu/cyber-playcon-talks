@@ -108,18 +108,11 @@ func run(args []string) error {
 
 	nextID := 1
 	subs := make(map[int]chan update)
-	debounce := make(map[string]time.Time)
 	go func() {
 		for {
 			// Wait for an update or cancellation
 			select {
 			case update := <-updateC:
-				lastWrite, ok := debounce[update.Filename]
-				now := time.Now()
-				if ok && now.Sub(lastWrite) < time.Second {
-					continue
-				}
-				debounce[update.Filename] = now
 
 				if update.Filename == "index.html" {
 					time.Sleep(100 * time.Millisecond)
@@ -267,7 +260,7 @@ func reloadOnUpdate(ctx context.Context, updateC chan<- update, dir string) erro
 			if !ok {
 				return errors.New("event channel closed")
 			}
-			if !(event.Has(fsnotify.Write) || event.Has(fsnotify.Rename)) {
+			if !(event.Has(fsnotify.Write)) {
 				continue
 			}
 			switch n := event.Name; n {
