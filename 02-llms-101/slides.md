@@ -147,6 +147,18 @@ A proof of concept where text on the page instructs the LLM to pretend to be Mic
 
 ---
 
+<h1 class="mb-2">Another Less Harmless Example</h1>
+
+<img src="/assets/pentest-rce.png" />
+
+<a class="text-center block" href="https://www.blazeinfosec.com/post/llm-pentest-agent-hacking/">Source</a>
+
+???
+
+If you don't integrate LLMs carefully, they can be used to exploit your infrastructure
+
+---
+
 class: center, middle
 
 # Your Turn
