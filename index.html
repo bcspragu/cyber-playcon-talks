@@ -26,6 +26,7 @@
     ready(() => {
       initSlides()
 
+      <!-- START REMOVE -->
       const socket = new WebSocket("/live");
 
       // Listen for messages
@@ -46,6 +47,7 @@
           initSlides()
         }
       });
+      <!-- END REMOVE -->
     })
     </script>
   </body>

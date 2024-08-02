@@ -15,7 +15,7 @@
 }
 
 .remark-slide-content {
-  @apply prose prose-h1:text-5xl prose-p:text-2xl prose-li:text-2xl prose-img:my-1;
+  @apply prose prose-h1:text-5xl prose-h1:mt-8 prose-p:text-2xl prose-li:text-2xl prose-img:my-1;
 }
 
 .contain {

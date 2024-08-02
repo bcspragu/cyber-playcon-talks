@@ -1,6 +1,6 @@
 # Cyber PlayCon 2024 talks
 
-This repo contains the slides and associated infra for my talks.
+This repo contains the slides and associated infra for my talks. To view the talks, go to [cybr.lol](https://cybr.lol).
 
 # Setup
 

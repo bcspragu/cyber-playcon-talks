@@ -1,4 +1,6 @@
 /out.css
+/out.min.css
 /node_modules
 /remark-latest.min.js
 /frpc.ini
+/dist/

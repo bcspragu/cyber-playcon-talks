@@ -4,6 +4,7 @@
   "description": "This repo contains the slides and associated infra for my talks.",
   "scripts": {
     "tailwind": "tailwindcss -i ./main.css -o ./out.css --watch",
+    "tailwind:min": "tailwindcss -i ./main.css -o ./out.min.css --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
