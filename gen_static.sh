@@ -28,6 +28,7 @@ for srcdir in "${!decks[@]}"; do
     index.html > "./dist/$destdir/index.html"
   cp "$srcdir/slides.md" "./dist/$destdir/"
   cp -r "$srcdir/assets" "./dist/$destdir/"
+  cp favicon/* "./dist/$destdir/"
   cp "out.min.css" "./dist/$destdir/out.min.css"
   cp "remark-latest.min.js" "./dist/$destdir/remark.js"
 done

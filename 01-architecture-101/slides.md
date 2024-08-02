@@ -18,6 +18,19 @@ class: center, middle, intro
 
 class: center, middle
 
+# What is "Architecture"?
+
+???
+
+- Basically just how you connect and arrange your computers
+- Why is it important?
+  - Shows you where your system might be weak (single points of failure, points of attack, etc)
+  - Can make your system expensive
+
+---
+
+class: center, middle
+
 <h1 class="text-6xl">The Assignment</h1>
 
 We're starting a hypothetical social media and gaming company.
@@ -75,6 +88,16 @@ class: center, middle
 
 <img src="/assets/snapchat.avif" /img>
 <a class="text-center block" href="https://eng.snap.com/monolith-to-multicloud-microservices-snap-service-mesh">Source</a>
+
+---
+
+class: center, middle
+
+<div class="w-3/4 mx-auto text-3xl">Knowing the architecture of a service is an important step in defending it<br>...or attacking it!</div>
+
+???
+
+Talk briefly about pen testing
 
 ---
 
