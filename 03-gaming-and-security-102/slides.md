@@ -16,7 +16,7 @@ Specifically...
 class: contain
 background-image: url(/assets/minecraft.jpg)
 
-<h1 class="text-center">Minecraft</h1>
+<h1 class="text-center -mt-1">Minecraft</h1>
 
 ---
 
