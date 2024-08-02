@@ -4,31 +4,30 @@
 
 set -euo pipefail
 
-nvm use
 npm run tailwind:min
 
-declare -a decks=(
-  "01-architecture-101"
-  "02-llms-101"
-  "03-gaming-and-security-102"
-  "04-cyber-investigations-101"
-  "05-cyber-security-and-ai-102"
+declare -A decks=(
+  ["01-architecture-101"]="architecture-101.cybr.lol"
+  ["02-llms-101"]="llms-101.cybr.lol"
+  ["03-gaming-and-security-102"]="gaming-and-security-102.cybr.lol"
+  ["04-cyber-investigations-101"]="cyber-investigations-101.cybr.lol"
+  ["05-cyber-security-and-ai-102"]="cyber-security-and-ai-102.cybr.lol"
 )
 
+for srcdir in "${!decks[@]}"; do
+  destdir="${decks[$srcdir]}"
 
-## now loop through the above array
-for deck in "${decks[@]}"
-do
-  title=(jq -r '.title' "$deck/metadata.json")
-  rm -rf "./dist/$deck"
-  mkdir "./dist/$deck"
+  title="$(jq -r '.title' "$srcdir/metadata.json")"
+
+  rm -rf "./dist/$destdir"
+  mkdir "./dist/$destdir"
   sed \
     -e '/<!-- START REMOVE -->/,/<!-- END REMOVE -->/d' \
     -e "s/{{.Title}}/$title/g" \
     -e 's/out.css/out.min.css/g' \
-    index.html > ".dist/$deck/index.html"
-  cp "$deck/slides.md" ".dist/$deck/"
-  cp "out.min.css" ".dist/$deck/out.min.css"
-  cp "remark-latest.min.js" ".dist/$deck/remark.js"
+    index.html > "./dist/$destdir/index.html"
+  cp "$srcdir/slides.md" "./dist/$destdir/"
+  cp -r "$srcdir/assets" "./dist/$destdir/"
+  cp "out.min.css" "./dist/$destdir/out.min.css"
+  cp "remark-latest.min.js" "./dist/$destdir/remark.js"
 done
-
